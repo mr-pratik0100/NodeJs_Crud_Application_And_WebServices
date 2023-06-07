@@ -1,0 +1,35 @@
+
+<html>
+    <head>
+        <body>
+            <h1>PRODUCT DETAILS</h1>
+            
+            <form action="/addproducts">
+                <button id="addbtn" name="addbtn" value="btn" type="submit" >Add New Products</button>
+                <table border="2px">
+                    <thead>
+                        <th>ProductId</th>
+                        <th>ProductName</th>
+                        <th>ProductQuantity</th>
+                        <th>Action</th>
+                    </thead>
+                    <tbody>
+                        <%for(let i=0;i<productdata.length;i++){%>
+                            <tr>
+                                <td><%=productdata[i].pid%></td>
+                                <td><%=productdata[i].pname%></td>
+                                <td><%=productdata[i].pquanti%></td>
+                                <td>
+                                    <a href="/edit/<%=productdata[i].pid%>">edit</a>
+                                    <a href="/delete/<%=productdata[i].pid%>">delete</a>
+                                </td>
+                            </tr>
+                        <%}%>
+                    </tbody>
+                </table>
+                    
+                
+            </form>
+        </body>
+    </head>
+</html>
